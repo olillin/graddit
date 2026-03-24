@@ -133,6 +133,13 @@ header > h1 {
     background: radial-gradient(circle at center, transparent, var(--color-background));
 }
 
+/* Background animation */
+@media (prefers-reduced-motion) {
+    .background {
+        animation: none !important;
+    }
+}
+
 @media screen and (max-width: 400px) {
     body {
         background-color: var(--color-frame);
