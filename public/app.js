@@ -1,30 +1,33 @@
 /** @type {HTMLInputElement} */
-const gradde = document.getElementById('gradde')
+const cream = document.getElementById('cream')
 /** @type {HTMLInputElement} */
-const bla = document.getElementById('bla')
+const blue = document.getElementById('blue')
 /** @type {HTMLInputElement} */
-const gron = document.getElementById('gron')
+const green = document.getElementById('green')
 
 const ratios = {
-    gradde: 1,
-    bla: 5,
-    gron: 2.5,
+    cream: 1,
+    blue: 5,
+    green: 2.5,
 }
 
-gradde?.addEventListener('change', e => {
+cream?.addEventListener('input', e => {
     const value = e.currentTarget.value
-    bla.value = ratios.bla * value / ratios.gradde
-    gron.value = ratios.gron * value / ratios.gradde
+    if (isNaN(parseFloat(value))) return
+    blue.value = ratios.blue * value / ratios.cream
+    green.value = ratios.green * value / ratios.cream
 })
-bla?.addEventListener('change', e => {
+blue?.addEventListener('input', e => {
     const value = e.currentTarget.value
-    gradde.value = ratios.gradde * value / ratios.bla
-    gron.value = ratios.gron * value / ratios.bla
+    if (isNaN(parseFloat(value))) return
+    cream.value = ratios.cream * value / ratios.blue
+    green.value = ratios.green * value / ratios.blue
 })
-gron?.addEventListener('change', e => {
+green?.addEventListener('input', e => {
     const value = e.currentTarget.value
-    gradde.value = ratios.gradde * value / ratios.gron
-    bla.value = ratios.bla * value / ratios.gron
+    if (isNaN(parseFloat(value))) return
+    cream.value = ratios.cream * value / ratios.green
+    blue.value = ratios.blue * value / ratios.green
 })
 
-gradde.dispatchEvent(new Event('change'))
+cream.dispatchEvent(new Event('input'))

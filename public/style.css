@@ -140,6 +140,18 @@ header > h1 {
     }
 }
 
+/* Hide number input spinner */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Adapt to screen size */
 @media screen and (max-width: 400px) {
     body {
         background-color: var(--color-frame);
