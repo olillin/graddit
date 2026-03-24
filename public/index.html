@@ -6,8 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GräddIT</title>
-    <meta name="description" content="Miniräknare för hur du gör turkos grädde som P.R.I.T.">
+    <meta name="description" content="Miniräknare för att göra P.R.I.T.s turkosa grädde">
     <meta name="keywords" content="grädde chalmers.it it chalmers">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz@0,8..144;1,8..144&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz@0,8..144;1,8..144&display=swap"></noscript>
+    <link rel="preload" href="zyzol.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="zyzol.css"></noscript>
     <link rel="stylesheet" href="/style.css">
     <script src="/app.js" defer></script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -15,15 +21,15 @@
 
 <body>
     <main>
-        <header>
-            <h1>GräddIT</h1>
-            <p class="tagline"><span>hur du gör turkos grädde som P<span class="dark">.</span>R<span
-                          class="dark">.</span>I<span class="dark">.</span>T<span class="dark">.</span></span></p>
-        </header>
+        <h1>GräddIT</h1>
+        <p class="tagline">
+            <span>gör turkos grädde som P.&nbsp;R.&nbsp;I.&nbsp;T.</span>
+        </p>
+
         <div class="ingredients">
             <label class="ingredient" for="cream">Grädde</label>
             <input type="number" name="cream" id="cream" value="1">
-            <span class="unit">l</span>
+            <span class="unit">liter</span>
 
             <label class="ingredient" for="blue">Blå karamellfärg</label>
             <input type="number" name="blue" id="blue" value="1">

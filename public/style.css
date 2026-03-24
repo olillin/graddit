@@ -1,35 +1,29 @@
-@font-face {
-    font-family: Zyzol;
-    src: url('Zyzol.otf');
-}
-
 :root {
     --color-text: #000000;
     --color-background: #d9fcff;
     --color-frame: #f5feff;
     --color-border: #09cdda;
-    --color-tagline: #09cdda;
+    --color-tagline: #08b3bf;
+    --color-input: #d5fcff;
     --color-extra: #555555;
 
     --font-header: Zyzol, Roboto, Arial, sans;
     --font-sans: Roboto, Arial, sans;
-    --font-serif: serif;
+    --font-serif: "Roboto Serif", serif;
 }
 
 body {
-    margin: 0 !important;
     height: 90vh;
+    min-height: 20em;
+    display: grid;
+    place-content: center;
+    overflow-x: hidden;
+
     color: var(--color-text);
     background-color: var(--color-background);
+    
     font-family: var(--font-sans);
-    
     font-size: 1.5em;
-    
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    
-    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,24 +31,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 main {
+    max-width: max-content;
+    max-height: max-content;
+
+    margin: 0.5em;
     padding: 1em;
-    border: 2px solid var(--color-border);
+    border: 0.1em solid var(--color-border);
     border-radius: 1.75em;
     background-color: var(--color-frame);
-    min-height: max-content;
-    box-shadow: 0 0.5em 1em -0.1em #0005;
-}
+    box-shadow: 0 0.5em 1em -0.1em #0232;
 
-.dark {
-    color: #00babe;
-}
-
-header > * {
     display: flex;
-    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
-header > h1 {
+h1 {
     margin-bottom: 0;
 }
 
@@ -64,15 +56,16 @@ header > h1 {
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 0.9em;
+    text-align: center;
 }
 
 .ingredients {
-    margin: 1em auto 1.5em;
+    margin-block: 2em;
     max-width: max-content;
 
     display: grid;
-    
     grid-template-columns: auto 1fr 1fr;
+    grid-gap: 0.5em 0.25em;
 }
 
 .ingredients > * {
@@ -82,27 +75,24 @@ header > h1 {
 }
 
 .ingredients > input {
-    border-radius: 0.5em;
+    border-radius: 1em;
+    padding-inline: 0.5em;
     border: none;
-    background-color: transparent;
+    background-color: var(--color-input);
     text-align: right;
     width: 3em;
+    place-self: end;
 
     font-family: var(--font-sans);
     font-size: 1em;
-    
-    margin-bottom: 1em;
-}
-
-.ingredients > .unit {
-    margin-bottom: 1em;
 }
 
 .extra {
+    color: var(--color-extra);
     font-family: var(--font-serif);
     font-size: 0.7em;
-    color: var(--color-extra);
     font-style: italic;
+    text-align: center;
 }
 
 @keyframes pan {
@@ -115,9 +105,10 @@ header > h1 {
 }
 
 .background {
+    position: fixed;
+    inset: 0;
     width: 100vw;
-    height: 110vh;
-    position: absolute;
+    height: 100vh;
     z-index: -1;
     
     background: url('dots.svg');
@@ -152,33 +143,23 @@ input[type=number] {
 }
 
 /* Adapt to screen size */
-@media screen and (max-width: 400px) {
-    body {
-        background-color: var(--color-frame);
-    }
-    
-    main {
-        border: none;
-        border-radius: 0;
-        width: 100%;
-    }
-    
+@media screen and (max-width: 450px) {
+    /* Make label and inputs on separate rows */
     .ingredients {
-        grid-template-columns: min-content 1fr;
-    }
+        grid-template-columns: 1fr auto;
+        margin-top: 0;
+        grid-row-gap: 0.25em;
 
-    .ingredients .ingredient {
-        grid-column-start: span 2;
-        margin-bottom: -0.25em;
+        & .ingredient {
+            grid-column-start: span 2;
+            align-self: end;
+            margin-top: 1em;
+        }
     }
 }
 
-@media screen and (min-width: 401px) {
-    body {
-        align-items: center;
-    }
-    
-    .ingredients .ingredient {
-        margin-bottom: 1em;
+@media screen and (min-width: 451px) {
+    .ingredient {
+        text-wrap: nowrap;
     }
 }
