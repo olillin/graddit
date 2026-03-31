@@ -1,0 +1,11 @@
+# This compose file shows how to deploy the service in production
+
+name: graddit
+
+services:
+  server:
+    image: ghcr.io/olillin/graddit
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+
