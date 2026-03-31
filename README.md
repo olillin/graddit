@@ -8,7 +8,7 @@ like [P.R.I.T.](https://prit.chalmers.it) makes.
 ### Using Docker run
 
 ```console
-docker run -p "8080:8080" ghcr.io/olillin/graddit:latest
+docker run -p "8080:8080" ghcr.io/cthit/graddit:latest
 ```
 
 ### Using Docker Compose
