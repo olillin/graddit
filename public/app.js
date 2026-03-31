@@ -31,3 +31,14 @@ green?.addEventListener('input', e => {
 })
 
 cream.dispatchEvent(new Event('input'))
+
+// Heart spin animation
+for (const heart of document.querySelectorAll('.pixelnheart')) {
+    heart.addEventListener('click', () => {
+        if (heart.classList.contains('spinning')) return
+        heart.classList.add('spinning')
+        setTimeout(() => {
+            heart.classList.remove('spinning')
+        }, 850)
+    })
+}
